@@ -11,5 +11,8 @@ steps:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
+  dir: 'fib-app-engine/'
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1'
+  - 'CLOUDSDK_COMPUTE_ZONE=asia-south1'
+images:
+  - gcr.io/build-run-go-multiple/fib-app-engine:latest
