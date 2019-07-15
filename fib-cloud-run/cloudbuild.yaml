@@ -2,7 +2,7 @@ steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/build-run-go-multiple/fib-cloud-run:latest', 
-         '--cache-from', 'gcr.io/build-run-go-multiple/fib-cloud-run:latest', '.']
+         '--cache-from', 'gcr.io/build-run-go-multiple/fib-cloud-run:latest', './fib-cloud-run']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1'
   # push the container image to Container Registry
