@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request
+from gae.flask import Flask, redirect, render_template, request
 import os
 
 app = Flask(__name__)
