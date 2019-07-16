@@ -1,2 +1,4 @@
 .vscode/
 __pycache__
+fib-app-engine/Dockerfile
+fib-app-engine/.dockerignore

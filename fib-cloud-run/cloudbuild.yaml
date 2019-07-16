@@ -1,17 +1,17 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/build-run-go-multiple/fib-cloud-run:latest', 
-         '--cache-from', 'gcr.io/build-run-go-multiple/fib-cloud-run:latest', './fib-cloud-run']
+  args: ['build', '-t', 'gcr.io/build-compose-multiple/fib-cloud-run:latest', 
+         '--cache-from', 'gcr.io/build-compose-multiple/fib-cloud-run:latest', './fib-cloud-run']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/build-run-go-multiple/fib-cloud-run']
+  args: ['push', 'gcr.io/build-compose-multiple/fib-cloud-run']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'build-run-go-multiple', '--image', 'gcr.io/build-run-go-multiple/fib-cloud-run', '--region', 'us-central1','--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'build-compose-multiple', '--image', 'gcr.io/build-compose-multiple/fib-cloud-run', '--region', 'us-central1','--platform', 'managed']
 images:
-- gcr.io/build-run-go-multiple/fib-cloud-run:latest
+- gcr.io/build-compose-multiple/fib-cloud-run:latest
