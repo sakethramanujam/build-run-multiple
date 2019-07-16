@@ -1,7 +1,5 @@
 runtime: python37
 instance_class: F2
 libraries:
-- name: gunicorn
-  version: "latest"
 - name: flask
   version: "latest"
